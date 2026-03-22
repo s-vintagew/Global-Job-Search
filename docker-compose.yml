@@ -1,0 +1,55 @@
+#version: '3.9'
+
+services:
+  # ─── PostgreSQL Database ───────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-jobsearch}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-jobsearch_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-global_jobs}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-jobsearch}" ]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ─── API Gateway (FastAPI) ─────────────────────────────────
+  api:
+    build: ./services/api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-jobsearch}:${POSTGRES_PASSWORD:-jobsearch_pass}@db:5432/${POSTGRES_DB:-global_jobs}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ─── Scraper Worker ────────────────────────────────────────
+  scraper:
+    build: ./services/scraper
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER:-jobsearch}:${POSTGRES_PASSWORD:-jobsearch_pass}@db:5432/${POSTGRES_DB:-global_jobs}
+      RAPIDAPI_KEY: ${RAPIDAPI_KEY:-}
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # ─── Frontend (Nginx) ─────────────────────────────────────
+  frontend:
+    build: ./services/frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:

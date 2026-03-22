@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Job Search — Discover Opportunities Worldwide</title>
+    <meta name="description" content="Explore real-time job listings from around the world on an interactive 3D globe. Filter by country, job type, and more.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 3D Globe Container -->
+    <div id="globeViz"></div>
+
+    <!-- Ambient particles overlay -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- UI Overlay -->
+    <div class="overlay-container">
+
+        <!-- ─── Left: Branding + Filters ─────────────────────── -->
+        <div class="left-column">
+            <header class="glass-panel brand-header" id="brandHeader">
+                <div class="brand-logo">
+                    <span class="logo-icon material-icons-round">public</span>
+                    <h1>Global <span class="accent">Jobs</span></h1>
+                </div>
+                <p class="tagline">Real-time opportunities from across the&nbsp;world.</p>
+                <div class="stats-bar">
+                    <div class="stat">
+                        <span class="stat-value" id="jobCount">0</span>
+                        <span class="stat-label">Jobs</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value" id="countryCount">0</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value" id="sourceCount">0</span>
+                        <span class="stat-label">Sources</span>
+                    </div>
+                </div>
+            </header>
+
+            <aside class="glass-panel filter-panel" id="filterPanel">
+                <div class="filter-header">
+                    <h2><span class="material-icons-round">tune</span> Filters</h2>
+                </div>
+
+                <div class="filter-group">
+                    <label for="countryFilter">Country</label>
+                    <select id="countryFilter">
+                        <option value="all">🌍 Everywhere</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="typeFilter">Job Type</label>
+                    <select id="typeFilter">
+                        <option value="all">Any Type</option>
+                        <option value="remote">🏠 Remote</option>
+                        <option value="onsite">🏢 On-site</option>
+                        <option value="hybrid">🔀 Hybrid</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="experienceFilter">Experience</label>
+                    <select id="experienceFilter">
+                        <option value="all">Any Level</option>
+                        <option value="junior">🌱 Junior</option>
+                        <option value="mid">⚡ Mid-Level</option>
+                        <option value="senior">🏆 Senior</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="roleFilter">Search</label>
+                    <div class="search-input-wrapper">
+                        <span class="material-icons-round search-icon">search</span>
+                        <input type="text" id="roleFilter" placeholder="e.g. React, Python, Designer" />
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label for="daysFilter">Posted Within</label>
+                    <select id="daysFilter">
+                        <option value="">Any Time</option>
+                        <option value="1">Past 24 hours</option>
+                        <option value="7">Past 7 days</option>
+                        <option value="14">Past 2 weeks</option>
+                        <option value="30">Past month</option>
+                    </select>
+                </div>
+
+                <button id="applyFiltersBtn" class="primary-btn">
+                    <span class="material-icons-round">filter_list</span>
+                    Apply Filters
+                </button>
+            </aside>
+        </div>
+
+        <!-- ─── Right Top: Toggle Rotation ───────────────────── -->
+        <div class="controls-area">
+            <button id="toggleRotationBtn" class="glass-pill icon-btn" title="Toggle Rotation">
+                <span class="material-icons-round" id="rotationIcon">pause</span>
+            </button>
+        </div>
+
+        <!-- ─── Right Bottom: Job Details ────────────────────── -->
+        <div id="jobDetailsPanel" class="glass-panel job-details hidden">
+            <button id="closeDetailsBtn" class="close-btn">
+                <span class="material-icons-round">close</span>
+            </button>
+            <div class="detail-source" id="detailSource">remoteok</div>
+            <h2 id="detailTitle">Software Engineer</h2>
+            <h3 id="detailCompany">Tech Corp</h3>
+            <p id="detailLocation" class="location">
+                <span class="material-icons-round location-icon">place</span>
+                <span id="detailLocationText">San Francisco, US</span>
+            </p>
+            <div class="tags-row">
+                <span id="detailType" class="tag type-tag">Remote</span>
+                <span id="detailSalary" class="tag salary-tag">$120k - $150k</span>
+                <span id="detailExperience" class="tag exp-tag">Mid-level</span>
+            </div>
+            <div class="detail-tags" id="detailTags"></div>
+            <p id="detailDescription" class="description">
+                Looking for a skilled developer to join our growing team.
+            </p>
+            <a href="#" id="detailLink" target="_blank" rel="noopener noreferrer" class="apply-btn">
+                <span class="material-icons-round">open_in_new</span>
+                Apply Now
+            </a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="//unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script src="//unpkg.com/globe.gl@2.35.1/dist/globe.gl.min.js"></script>
+    <script src="app.js?v=2"></script>
+</body>
+</html>

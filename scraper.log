@@ -1,0 +1,60 @@
+2026-03-21 17:19:14,855 [INFO] scraper: Database is ready!
+2026-03-21 17:19:14,855 [INFO] scraper: Database tables ensured.
+2026-03-21 17:19:14,855 [INFO] scraper: ============================================================
+2026-03-21 17:19:14,855 [INFO] scraper: Starting scraping pipeline at 2026-03-21 17:19:14.855964
+2026-03-21 17:19:14,856 [INFO] scraper: ============================================================
+2026-03-21 17:19:14,866 [INFO] app.scrapers.base: [remoteok] Fetching https://remoteok.com/api...
+2026-03-21 17:19:15,195 [INFO] app.scrapers.base: [remoteok] Scraped 96 jobs
+2026-03-21 17:19:15,237 [INFO] scraper: [remoteok] Added 0 new jobs
+2026-03-21 17:19:15,237 [INFO] app.scrapers.base: [remotive] Fetching https://remotive.com/api/remote-jobs...
+2026-03-21 17:19:15,909 [INFO] app.scrapers.base: [remotive] Scraped 25 jobs
+2026-03-21 17:19:15,918 [INFO] scraper: [remotive] Added 0 new jobs
+2026-03-21 17:19:15,918 [INFO] app.scrapers.base: [arbeitnow] Fetching https://www.arbeitnow.com/api/job-board-api...
+2026-03-21 17:19:16,411 [INFO] app.scrapers.base: [arbeitnow] Scraped 100 jobs
+2026-03-21 17:19:16,412 [INFO] app.geocoder: Geocoding: Cologne
+2026-03-21 17:19:17,783 [INFO] app.geocoder: Geocoding: Hamburg
+2026-03-21 17:19:18,971 [INFO] app.geocoder: Geocoding: Hamburg, Hamburg, Germany
+2026-03-21 17:19:20,195 [INFO] app.geocoder: Geocoding: Cologne, North Rhine-Westphalia, Germany
+2026-03-21 17:19:21,424 [INFO] app.geocoder: Geocoding: Berlin, Berlin, Germany
+2026-03-21 17:19:22,587 [INFO] app.geocoder: Geocoding: München, Bavaria, Germany
+2026-03-21 17:19:23,750 [INFO] app.geocoder: Geocoding: Frankfurt, Hesse, Germany
+2026-03-21 17:19:24,916 [INFO] app.geocoder: Geocoding: Stuttgart, Baden-Württemberg, Germany
+2026-03-21 17:19:26,082 [INFO] app.geocoder: Geocoding: Frankfurt am Main, Hesse, Germany
+2026-03-21 17:19:27,247 [INFO] app.geocoder: Geocoding: Erfurt, Thuringia, Germany
+2026-03-21 17:19:28,415 [INFO] app.geocoder: Geocoding: Leipzig, Saxony, Germany
+2026-03-21 17:19:29,579 [INFO] app.geocoder: Geocoding: Dresden, Saxony, Germany
+2026-03-21 17:19:30,847 [INFO] app.geocoder: Geocoding: Berlin
+2026-03-21 17:19:32,074 [INFO] app.geocoder: Geocoding: Wallerfing
+2026-03-21 17:19:33,303 [INFO] app.geocoder: Geocoding: Munich
+2026-03-21 17:19:34,477 [INFO] app.geocoder: Geocoding: Sankt Leon-Rot
+2026-03-21 17:19:35,654 [INFO] app.geocoder: Geocoding: Holm
+2026-03-21 17:19:36,819 [INFO] app.geocoder: Geocoding: Dortmund
+2026-03-21 17:19:38,001 [INFO] app.geocoder: Geocoding: Munich, Bavaria, Germany
+2026-03-21 17:19:39,184 [INFO] app.geocoder: Geocoding: Molbergen
+2026-03-21 17:19:40,347 [INFO] app.geocoder: Geocoding: Bottrop
+2026-03-21 17:19:41,514 [INFO] app.geocoder: Geocoding: Nuremberg
+2026-03-21 17:19:42,678 [INFO] app.geocoder: Geocoding: Essen
+2026-03-21 17:19:43,842 [INFO] app.geocoder: Geocoding: Bochum
+2026-03-21 17:19:45,079 [INFO] app.geocoder: Geocoding: Tettnang
+2026-03-21 17:19:46,276 [INFO] app.geocoder: Geocoding: Ludwigshafen
+2026-03-21 17:19:47,443 [INFO] app.geocoder: Geocoding: Rastatt
+2026-03-21 17:19:48,608 [INFO] app.geocoder: Geocoding: Karlsruhe
+2026-03-21 17:19:49,780 [INFO] app.geocoder: Geocoding: Leipzig
+2026-03-21 17:19:50,949 [INFO] app.geocoder: Geocoding: Freising
+2026-03-21 17:19:52,116 [INFO] app.geocoder: Geocoding: Osnabrück
+2026-03-21 17:19:53,546 [INFO] app.geocoder: Geocoding: Willich
+2026-03-21 17:19:54,935 [INFO] app.geocoder: Geocoding: Eschborn
+2026-03-21 17:19:56,757 [INFO] app.geocoder: Geocoding: Leonberg
+2026-03-21 17:19:58,566 [INFO] app.geocoder: Geocoding: München, Bayern, Germany
+2026-03-21 17:20:00,143 [INFO] app.geocoder: Geocoding: Oberursel
+2026-03-21 17:20:01,543 [INFO] app.geocoder: Geocoding: Leinfelden-Echterdingen
+2026-03-21 17:20:03,344 [INFO] app.geocoder: Geocoding: Hildesheim
+2026-03-21 17:20:04,843 [INFO] app.geocoder: Geocoding: Assamstadt
+2026-03-21 17:20:06,276 [INFO] app.geocoder: Geocoding: Gehrden
+2026-03-21 17:20:07,689 [INFO] scraper: [arbeitnow] Added 100 new jobs
+2026-03-21 17:20:07,690 [INFO] scraper: Pipeline complete — 100 total new jobs added
+2026-03-21 17:20:07,690 [INFO] scraper: ============================================================
+2026-03-21 17:20:07,701 [INFO] apscheduler.scheduler: Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2026-03-21 17:20:07,701 [INFO] scraper: Scheduler started — next scrape in 12 hours
+2026-03-21 17:20:07,702 [INFO] apscheduler.scheduler: Added job "run_scraping_pipeline" to job store "default"
+2026-03-21 17:20:07,702 [INFO] apscheduler.scheduler: Scheduler started

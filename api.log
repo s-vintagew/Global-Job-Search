@@ -1,0 +1,32 @@
+INFO:     Started server process [37146]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:45600 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45600 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45614 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43544 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43552 - "GET /static/index.html HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53650 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53338 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53348 - "GET /api/jobs?limit=300 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53338 - "GET /api/countries HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/jobs?limit=300&country=United+States&type=remote HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45560 - "GET /api/jobs?limit=300 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45548 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45548 - "GET /api/countries HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56948 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56964 - "GET /api/jobs?limit=300 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56948 - "GET /api/countries HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50880 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50888 - "GET /api/jobs?limit=300 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50888 - "GET /api/countries HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48746 - "GET /api/jobs?limit=300&days=14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48746 - "GET /api/jobs?limit=300&experience=mid&days=14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48746 - "GET /api/jobs?limit=300&experience=mid&days=14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57860 - "GET /api/jobs?limit=300&experience=senior&days=14 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57860 - "GET /api/jobs?limit=300&experience=senior HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [37146]
